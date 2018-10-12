@@ -1,0 +1,14 @@
+prefix=/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/share/qt5.7.1
+exec_prefix=${prefix}
+libdir=/usr/share/qt5.7.1/lib
+includedir=/usr/share/qt5.7.1/include
+
+
+Name: Qt5 Quick
+Description: Qt Quick module
+Version: 5.7.1
+Libs: -L${libdir} -lQt5Quick 
+Libs.private: -L/usr/share/qt5.7.1/lib -lQt5Gui -L/usr/share/qt5.7.1/lib -lQt5Qml -lQt5Network -lQt5Core -lpthread -ldl -lQt5Network -L/usr/share/qt5.7.1/lib -lQt5Core -lpthread -ldl -lGLESv2 -lsrv_um  
+Cflags: -I${includedir}/QtQuick -I${includedir}
+Requires: Qt5Core Qt5Gui Qt5Qml
+

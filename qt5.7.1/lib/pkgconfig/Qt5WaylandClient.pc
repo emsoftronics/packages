@@ -1,0 +1,14 @@
+prefix=/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/share/qt5.7.1
+exec_prefix=${prefix}
+libdir=/usr/share/qt5.7.1/lib
+includedir=/usr/share/qt5.7.1/include
+
+
+Name: Qt5 WaylandClient
+Description: Qt WaylandClient module
+Version: 5.7.1
+Libs: -L${libdir} -lQt5WaylandClient 
+Libs.private: -L/usr/share/qt5.7.1/lib -lQt5PlatformSupport -lQt5DBus -pthread -lgthread-2.0 -lglib-2.0 -ludev -lfontconfig -lfreetype -lEGL -lIMGegl -ldrm_omap -lGLESv2 -lsrv_um -lQt5Gui -lQt5Core -lpthread -ldl -lfontconfig -lfreetype -lxkbcommon -lwayland-client -lwayland-cursor -lglib-2.0 -lGLESv2 -lsrv_um  
+Cflags: -I${includedir}/QtWaylandClient -I${includedir}
+Requires: Qt5Core Qt5Gui
+

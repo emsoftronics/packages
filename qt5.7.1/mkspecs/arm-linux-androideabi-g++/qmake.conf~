@@ -1,0 +1,32 @@
+#
+# qmake configuration for building with arm-linux-gnueabi-g++
+#
+
+MAKEFILE_GENERATOR      = UNIX
+CONFIG                 += incremental
+QMAKE_INCREMENTAL_STYLE = sublib
+
+include(../common/linux.conf)
+include(../common/gcc-base-unix.conf)
+include(../common/g++-unix.conf)
+
+
+TOOLCHAIN_PATH = /home/user/Jacinto_Linux/ToolChain/gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf
+
+#Compiler Flags to take advantage of the ARM architecture
+QMAKE_CFLAGS = -march=armv7-a -marm -mfpu=neon -mfloat-abi=hard 
+QMAKE_CXXFLAGS = $$QMAKE_CFLAGS
+QMAKE_CFLAGS_RELEASE += -O3
+# modifications to g++.conf
+QMAKE_CC                = $$TOOLCHAIN_PATH/bin/arm-linux-gnueabihf-gcc 
+QMAKE_CXX               = $$TOOLCHAIN_PATH/bin/arm-linux-gnueabihf-g++
+QMAKE_LINK              = $$TOOLCHAIN_PATH/bin/arm-linux-gnueabihf-g++
+
+QMAKE_LINK_SHLIB        = $$TOOLCHAIN_PATH/bin/arm-linux-gnueabihf-g++
+
+# modifications to linux.conf
+QMAKE_AR                = $$TOOLCHAIN_PATH/bin/arm-linux-gnueabihf-ar cqs
+QMAKE_OBJCOPY           = $$TOOLCHAIN_PATH/bin/arm-linux-gnueabihf-objcopy
+QMAKE_NM                = $$TOOLCHAIN_PATH/bin/arm-linux-gnueabihf-nm -P
+QMAKE_STRIP             = $$TOOLCHAIN_PATH/bin/arm-linux-gnueabihf-strip
+load(qt_config)

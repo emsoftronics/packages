@@ -1,0 +1,14 @@
+prefix=/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/share/qt5.7.1
+exec_prefix=${prefix}
+libdir=/usr/share/qt5.7.1/lib
+includedir=/usr/share/qt5.7.1/include
+
+
+Name: Qt5 Svg
+Description: Qt Svg module
+Version: 5.7.1
+Libs: -L${libdir} -lQt5Svg 
+Libs.private: -L/usr/share/qt5.7.1/lib -lQt5Widgets -lQt5Gui -lQt5Core -lpthread -ldl -lGLESv2 -lsrv_um  
+Cflags: -I${includedir}/QtSvg -I${includedir}
+Requires: Qt5Core Qt5Gui Qt5Widgets
+

@@ -1,0 +1,14 @@
+prefix=/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/share/qt5.7.1
+exec_prefix=${prefix}
+libdir=/usr/share/qt5.7.1/lib
+includedir=/usr/share/qt5.7.1/include
+
+
+Name: Qt5 Qml
+Description: Qt Qml module
+Version: 5.7.1
+Libs: -L${libdir} -lQt5Qml 
+Libs.private: -L/usr/share/qt5.7.1/lib -lQt5Network -lQt5Core -lpthread -ldl -lrt  
+Cflags: -I${includedir}/QtQml -I${includedir}
+Requires: Qt5Core Qt5Network
+

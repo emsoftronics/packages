@@ -1,0 +1,14 @@
+prefix=/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/share/qt5.7.1
+exec_prefix=${prefix}
+libdir=/usr/share/qt5.7.1/lib
+includedir=/usr/share/qt5.7.1/include
+
+
+Name: Qt5 Gamepad
+Description: Qt Gamepad module
+Version: 5.7.1
+Libs: -L${libdir} -lQt5Gamepad 
+Libs.private: -L/usr/share/qt5.7.1/lib -lQt5Gui -lQt5Core -lpthread -ldl -lGLESv2 -lsrv_um  
+Cflags: -I${includedir}/QtGamepad -I${includedir}
+Requires: Qt5Core Qt5Gui
+

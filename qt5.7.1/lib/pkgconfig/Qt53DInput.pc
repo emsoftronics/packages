@@ -1,0 +1,14 @@
+prefix=/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/share/qt5.7.1
+exec_prefix=${prefix}
+libdir=/usr/share/qt5.7.1/lib
+includedir=/usr/share/qt5.7.1/include
+
+
+Name: Qt5 3DInput
+Description: Qt 3DInput module
+Version: 5.7.1
+Libs: -L${libdir} -lQt53DInput 
+Libs.private: -L/usr/share/qt5.7.1/lib -lQt53DCore -L/usr/share/qt5.7.1/lib -L/usr/share/qt5.7.1/lib -lQt5Gamepad -lQt5Gui -lQt5Network -lQt5Core -lpthread -ldl -lGLESv2 -lsrv_um  
+Cflags: -I${includedir}/Qt3DInput -I${includedir}
+Requires: Qt5Core Qt5Gui Qt53DCore Qt5Gamepad
+

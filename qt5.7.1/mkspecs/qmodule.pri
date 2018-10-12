@@ -1,0 +1,40 @@
+CONFIG +=  cross_compile no-libdl qpa largefile precompile_header enable_new_dtags neon pcre
+QT_BUILD_PARTS += libs
+QT_SKIP_MODULES +=  qtwebchannel qtwebsockets qtwebview qtwebengine qtx11extras qtsensors qtserialbus qtserialport qtlocation
+QT_NO_DEFINES =  CUPS EGL_X11 IMAGEFORMAT_JPEG LIBPROXY OPENVG TSLIB XRENDER
+QT_QCONFIG_PATH = 
+host_build {
+    QT_CPU_FEATURES.x86_64 =  mmx sse sse2
+} else {
+    QT_CPU_FEATURES.arm =  neon
+}
+QT_COORD_TYPE = float
+QT_LFLAGS_ODBC   = -lodbc
+styles += mac fusion windows
+DEFINES += QT_NO_MTDEV
+QT_LIBS_DBUS = -ldbus-1  
+QT_CFLAGS_DBUS = -I/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/include/dbus-1.0 -I/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/lib/dbus-1.0/include  
+QT_HOST_CFLAGS_DBUS = -I/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/include/dbus-1.0 -I/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/lib/dbus-1.0/include  
+QT_CFLAGS_GLIB = -pthread -I/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/include/glib-2.0 -I/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/lib/glib-2.0/include  
+QT_LIBS_GLIB = -pthread -lgthread-2.0 -lglib-2.0  
+QT_CFLAGS_PULSEAUDIO = -D_REENTRANT -I/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/include/glib-2.0 -I/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/lib/glib-2.0/include  
+QT_LIBS_PULSEAUDIO = -lpulse-mainloop-glib -lpulse -lglib-2.0  
+QMAKE_INCDIR_OPENGL_ES2 = 
+QMAKE_LIBDIR_OPENGL_ES2 = 
+QMAKE_LIBS_OPENGL_ES2 =  "-lGLESv2" "-lsrv_um"
+QMAKE_CFLAGS_OPENGL_ES2 = 
+QMAKE_CFLAGS_FONTCONFIG = -I/home/lntts/Jacinto/Jacinto_linux/targetfs/usr/include/freetype2  
+QMAKE_LIBS_FONTCONFIG = -lfontconfig -lfreetype  
+QMAKE_INCDIR_LIBUDEV =  
+QMAKE_LIBS_LIBUDEV = -ludev  
+DEFINES += QT_NO_TSLIB
+QMAKE_INCDIR_XKBCOMMON_EVDEV =  
+QMAKE_LIBS_XKBCOMMON_EVDEV = -lxkbcommon  
+DEFINES += QT_NO_LIBINPUT
+QMAKE_X11_PREFIX = /usr
+QMAKE_INCDIR_EGL =  
+QMAKE_LIBS_EGL = -lEGL -lIMGegl -ldrm_omap -lsrv_um  
+QMAKE_CFLAGS_EGL =  
+EXTRA_LIBS +=  -l"dl"
+sql-drivers = 
+sql-plugins =  sqlite
